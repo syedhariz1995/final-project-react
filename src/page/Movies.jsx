@@ -1,23 +1,49 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Nav from "../component/Nav";
 
 const Movies = () => {
+  const location = useLocation();
   const [movieName, setMoviename] = useState("");
   const [movies, setMovies] = useState([]);
+  const [sortMovies, setSortMovies] = useState("");
 
 
-  async function fetchMovies() {
+
+  async function fetchMovies(searchValue) {
     const response = await axios.get(
-      `https://www.omdbapi.com/?i=tt3896198&apikey=25c6a9ee&s=${movieName}`
+      `https://www.omdbapi.com/?i=tt3896198&apikey=25c6a9ee&s=${searchValue}`
     );
     setMovies(response.data.Search);
   }
 
+
+
   useEffect(() => {
-    fetchMovies();
-  }, []);
+    const searchValue = new URLSearchParams(location.search).get("search");
+    if (searchValue) {
+      setMoviename(searchValue);
+      fetchMovies(searchValue);
+    }
+  }, [location]);
+
+
+
+  const handleSortMovie = (event) => {
+    const value = event.target.value
+    setSortMovies(value)
+    let sortedMovies = [...movies]
+    if (value === "NEW_TO_OLD") {
+      sortedMovies.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
+    } else if (value === "OLD_TO_NEW") {
+      sortedMovies.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
+    }
+    setMovies(sortedMovies)
+  }
+
+
 
   return (
     <div>
@@ -37,7 +63,7 @@ const Movies = () => {
           <button
             className="search__button"
             id="search__button"
-            onClick={fetchMovies}
+            onClick={() => fetchMovies(movieName)}
           >
             <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
           </button>
@@ -45,7 +71,7 @@ const Movies = () => {
 
         <div className="search__results">
           <h3>Your movies:</h3>
-          <select id="filter" onchange="filterMovies(event)">
+          <select id="filter" onChange={handleSortMovie} value={sortMovies}>
             <option value="" disabled selected>
               Sort
             </option>
@@ -55,7 +81,7 @@ const Movies = () => {
         </div>
 
         <div className="movies">
-          {!!movies ? (
+          {movies ? (
             movies.map((movie) => {
               return (
                 <div className="movie">
