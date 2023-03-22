@@ -79,9 +79,9 @@ const Movies = () => {
 
         <div className="movies">
           {loading ? (
-            new Array(10).fill(0).map((_, movies) => (
+            new Array(9).fill(0).map((_, index) => (
               <>
-                <div className="movie" key={movies}>
+                <div className="movie" key={index}>
                   <figure className="movie__img--wrapper">
                     <img className="movie__img--skeleton" />
                   </figure>

@@ -6,7 +6,7 @@ import Movies from '../page/Movies'
 const Nav = () => {
   return (
     <nav>
-      <a href="/"><img className='logo__img' src={movieLogo} alt="" /></a>
+      <Link to="/"><img className='logo__img' src={movieLogo} alt="" /></Link>
       <ul className="nav__links">
         <li><Link className="nav__link nav__home" to="/">Home</Link></li>
         <li><Link className="nav__link" to="/movies">Movies</Link></li>
