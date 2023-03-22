@@ -9,14 +9,19 @@ const Movies = () => {
   const [movieName, setMoviename] = useState("");
   const [movies, setMovies] = useState([]);
   const [sortMovies, setSortMovies] = useState("");
+  const [loading, setLoading] = useState(true)
 
 
 
   async function fetchMovies(searchValue) {
+    setLoading(true)
     const response = await axios.get(
       `https://www.omdbapi.com/?i=tt3896198&apikey=25c6a9ee&s=${searchValue}`
     );
     setMovies(response.data.Search);
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000)
   }
 
 
@@ -29,7 +34,7 @@ const Movies = () => {
     }
   }, [location]);
 
-
+  
 
   const handleSortMovie = (event) => {
     const value = event.target.value
@@ -81,7 +86,23 @@ const Movies = () => {
         </div>
 
         <div className="movies">
-          {movies ? (
+          
+        {
+          loading ? new Array(10).fill(0).map((_, movies) => (
+            <>
+            <div className="movie" key={movies}>
+                  <figure className="movie__img--wrapper">
+                    <img className="movie__img--skeleton" />
+                  </figure>
+                  <div className="movie__title">
+                    <h3 className="movie__title--skeleton"></h3>
+                  </div>
+                  <div className="movie__year">
+                    <p className="movie__year--skeleton"></p>
+                  </div>
+                </div>
+            </>
+          )) : movies ? (
             movies.map((movie) => {
               return (
                 <div className="movie">
@@ -98,7 +119,7 @@ const Movies = () => {
               );
             })
           ) : (
-            <p>No movies found</p>
+              <p>No movies found</p>
           )}
         </div>
       </div>

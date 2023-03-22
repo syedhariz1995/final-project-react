@@ -27,7 +27,7 @@ html{
 }
 
 body{
-  background-color: rgb(208, 202, 249);
+  background-color: rgb(183, 158, 251);
 }
 
 li{
@@ -249,6 +249,7 @@ MOVIES
 .movie{
   width: calc(100%/3);
   height: 100%;
+  margin-bottom: 32px;
 }
 
 .movie__img--wrapper{
@@ -269,13 +270,21 @@ MOVIES
 
 .movie__title {
   font-size: 20px;
-  display: flex;
-  justify-content: center;
   margin-bottom: 8px;
   display: flex;
   align-items: center;
-  max-width: 200px;
+  justify-content: center;
+  /* max-width: 300px; */
   width: 100%;
+  text-align: center;
+}
+
+
+.movie__year, p{
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .movie:hover .movie__img {
@@ -295,6 +304,37 @@ MOVIES
   font-size: 20px;
   margin-top: 12px;
 }
+
+
+
+
+/*
+
+SKELETON
+
+*/
+
+
+.movie__img--skeleton{
+  height: 400px;
+  width: 250px;
+  background-color: lightgray;
+  border: none;
+}
+
+.movie__title--skeleton{
+  width: 250px;
+  height: 20px;
+  background-color: lightgray;
+}
+
+.movie__year--skeleton{
+  width: 100px;
+  height: 20px;
+  background-color: lightgray;
+}
+
+
 
 
 
