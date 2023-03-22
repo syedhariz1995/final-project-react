@@ -9,22 +9,18 @@ const Movies = () => {
   const [movieName, setMoviename] = useState("");
   const [movies, setMovies] = useState([]);
   const [sortMovies, setSortMovies] = useState("");
-  const [loading, setLoading] = useState(false)
-
-
+  const [loading, setLoading] = useState(false);
 
   async function fetchMovies(searchValue) {
-    setLoading(true)
+    setLoading(true);
     const response = await axios.get(
       `https://www.omdbapi.com/?i=tt3896198&apikey=25c6a9ee&s=${searchValue}`
     );
     setMovies(response.data.Search);
     setTimeout(() => {
-      setLoading(false)
-    }, 2000)
+      setLoading(false);
+    }, 2000);
   }
-
-
 
   useEffect(() => {
     const searchValue = new URLSearchParams(location.search).get("search");
@@ -34,21 +30,17 @@ const Movies = () => {
     }
   }, [location]);
 
-  
-
   const handleSortMovie = (event) => {
-    const value = event.target.value
-    setSortMovies(value)
-    let sortedMovies = [...movies]
+    const value = event.target.value;
+    setSortMovies(value);
+    let sortedMovies = [...movies];
     if (value === "NEW_TO_OLD") {
       sortedMovies.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
     } else if (value === "OLD_TO_NEW") {
       sortedMovies.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
     }
-    setMovies(sortedMovies)
-  }
-
-
+    setMovies(sortedMovies);
+  };
 
   return (
     <div>
@@ -86,13 +78,10 @@ const Movies = () => {
         </div>
 
         <div className="movies">
-          
-          
-          
-        {
-          loading ? new Array(10).fill(0).map((_, movies) => (
-            <>
-            <div className="movie" key={movies}>
+          {loading ? (
+            new Array(10).fill(0).map((_, movies) => (
+              <>
+                <div className="movie" key={movies}>
                   <figure className="movie__img--wrapper">
                     <img className="movie__img--skeleton" />
                   </figure>
@@ -103,8 +92,9 @@ const Movies = () => {
                     <p className="movie__year--skeleton"></p>
                   </div>
                 </div>
-            </>
-          )) : movies ? (
+              </>
+            ))
+          ) : movies ? (
             movies.map((movie) => {
               return (
                 <div className="movie">
@@ -121,7 +111,7 @@ const Movies = () => {
               );
             })
           ) : (
-              <p className="no__movies">No movies found</p>
+            <p className="no__movies">No movies found</p>
           )}
         </div>
       </div>

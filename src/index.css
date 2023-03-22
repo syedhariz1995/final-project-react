@@ -265,7 +265,7 @@ MOVIES
   justify-content: center;
   transition: 300ms all ease-in-out;
   border: none;
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 .movie__title {
@@ -274,10 +274,6 @@ MOVIES
   display: flex;
   width: 100%;
   padding-left: 40px;
-  /* align-items: center;
-  justify-content: center; */
-  /* max-width: 300px; */
-  /* text-align: center; */
 }
 
 
@@ -286,8 +282,6 @@ MOVIES
   display: flex;
   padding-left: 40px;
   margin-top: 12px;
-  /* align-items: center;
-  justify-content: center; */
 }
 
 .movie:hover .movie__img {
@@ -298,20 +292,6 @@ MOVIES
   font-size: 20px;
   font-weight: bold;
 }
-
-/* .title{
-  padding-left: 40px;
-  font-size: 24px;
-  display: flex;
-  width: 100%;
-}
-
-.year,
-.type{
-  padding-left: 40px;
-  font-size: 20px;
-  margin-top: 12px;
-} */
 
 
 
@@ -325,7 +305,7 @@ SKELETON
 
 .movie__img--skeleton{
   height: 400px;
-  width: 250px;
+  width: 280px;
   background-color: lightgray;
   border: none;
 }
@@ -333,14 +313,14 @@ SKELETON
 .movie__title--skeleton{
   width: 250px;
   height: 20px;
-  margin-left: 35px;
+  margin-left: 21px;
   background-color: lightgray;
 }
 
 .movie__year--skeleton{
   width: 100px;
   height: 20px;
-  margin-left: 35px;
+  margin-left: 21px;
   background-color: lightgray;
 }
 
