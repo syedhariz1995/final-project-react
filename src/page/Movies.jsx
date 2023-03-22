@@ -9,7 +9,7 @@ const Movies = () => {
   const [movieName, setMoviename] = useState("");
   const [movies, setMovies] = useState([]);
   const [sortMovies, setSortMovies] = useState("");
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
 
 
@@ -80,12 +80,14 @@ const Movies = () => {
             <option value="" disabled selected>
               Sort
             </option>
-            <option value="NEW_TO_OLD">Year : Oldest to Latest</option>
             <option value="OLD_TO_NEW">Year : Latest to Oldest</option>
+            <option value="NEW_TO_OLD">Year : Oldest to Latest</option>
           </select>
         </div>
 
         <div className="movies">
+          
+          
           
         {
           loading ? new Array(10).fill(0).map((_, movies) => (
@@ -119,7 +121,7 @@ const Movies = () => {
               );
             })
           ) : (
-              <p>No movies found</p>
+              <p className="no__movies">No movies found</p>
           )}
         </div>
       </div>
