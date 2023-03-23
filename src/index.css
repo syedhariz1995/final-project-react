@@ -352,6 +352,11 @@ MOVIE DETAILS
   margin-bottom: 20px;
 }
 
+.rating__details{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
 
 
 /*
