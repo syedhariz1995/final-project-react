@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import movieLogo from '../assets/movie_logo.png'
-import Movies from '../page/Movies'
 
 const Nav = () => {
   return (

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Nav from "../component/Nav";
 
 const Movies = () => {
@@ -98,6 +98,7 @@ const Movies = () => {
             movies.map((movie) => {
               return (
                 <div className="movie">
+                <Link to={`/movie/${movie.imdbID}`}>
                   <figure className="movie__img--wrapper">
                     <img src={movie.Poster} className="movie__img" />
                   </figure>
@@ -107,6 +108,7 @@ const Movies = () => {
                   <div className="movie__year">
                     <p>{movie.Year}</p>
                   </div>
+                </Link>
                 </div>
               );
             })
