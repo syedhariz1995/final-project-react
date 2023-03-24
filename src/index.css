@@ -316,7 +316,7 @@ MOVIE DETAILS
 
 .left__column--details{
   width: 100%;
-  max-width: 500px;
+  max-width: 750px;
 }
 
 .right__column--details{
@@ -386,6 +386,64 @@ SKELETON
   margin-left: 21px;
   background-color: lightgray;
 }
+
+.poster__details--skeleton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 750px;
+  width: 450px;
+  background-color: lightgray;
+}
+
+.title__details--skeleton{
+  width: 100%;
+  height: 48px;
+  background-color: lightgray;
+  margin-bottom: 20px;
+}
+
+.h3__skeleton{
+  width: 100px;
+  height: 28px;
+  background-color: lightgray;
+}
+
+.h4__skeleton{
+  width: 100px;
+  height: 20px;
+  background-color: lightgray;
+}
+
+.h4__skeleton--cast{
+  width: 100%;
+  height: 20px;
+  background-color: lightgray;
+}
+
+.h4__skeleton--plot{
+  width: 100%;
+  height: 20px;
+  background-color: lightgray;
+  margin-bottom: 8px;
+}
+
+.h4__skeleton--plot--final{
+  width: 100%;
+  height: 20px;
+  background-color: lightgray;
+  margin-bottom: 30px;
+}
+
+.h4__skeleton--genre,
+.h4__skeleton--director{
+  width: 200px;
+  height: 20px;
+  background-color: lightgray;
+  margin-bottom: 30px;
+}
+
 
 
 
