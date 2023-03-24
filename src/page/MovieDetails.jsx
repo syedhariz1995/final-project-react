@@ -96,13 +96,13 @@ const MovieDetails = () => {
                   <h4>{movie.Metascore}/100</h4>
                 </div>
                 <div className="rating">
-                  <h3>IMDb:</h3>
-                  <h4>{movie.imdbRating}/10</h4>
-                </div>
-                <div className="rating">
                   <h3>Rotten Tomatoes:</h3>
                   <h4>{movie.Ratings.find(rating => rating.Source === "Rotten Tomatoes")?.Value}</h4>
                 </div>
+                <div className="rating">
+                  <h3>IMDb:</h3>
+                  <h4>{movie.imdbRating}/10</h4>
+                </div>                
               </div>
             </div>
           </div>

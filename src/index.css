@@ -466,6 +466,10 @@ RESPONSIVENESS
     justify-content: center;
   }
 
+  .logo__img{
+    width: 110px;
+  }
+
   header h1{
     font-size: 40px;
   }
@@ -478,6 +482,10 @@ RESPONSIVENESS
     padding: 0 32px;
   }
 
+  .search__results h3{
+    font-size: 28px;
+  }
+
   .movies{
     display: flex;
     align-items: center;
@@ -486,8 +494,81 @@ RESPONSIVENESS
 
   .movie{
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     width: calc(100%/2)
+  }
+
+  .movie__title{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .movie__year{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .movie__details--container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left__column--details{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .title__details{
+    text-align: center;
+  }
+
+  .poster__details{
+    width: 350px;
+  }
+
+  .right__column--details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .details__column{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .details__column, h3{
+    text-align: center;
+  }
+
+  .movie__title--skeleton{
+    width: 100%;
+    max-width: 280px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .poster__details--skeleton{
+    width: 350px;
+    height: 500px;
+  }
+
+  .rating__details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -496,10 +577,18 @@ RESPONSIVENESS
     display: none;
   }
 
+  .logo__img{
+    width: 100px;
+  }
+
   .header{
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .header__img{
+    width: 320px;
   }
 
   header h1{
@@ -545,5 +634,24 @@ RESPONSIVENESS
   .movie__info{
     display: flex;
     flex-direction: column;
+  }
+
+  select{
+    height: 30px;
+    width: 190px;
+  }
+
+  .movie__title--skeleton{
+    width: 100%;
+    max-width: 280px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .poster__details--skeleton{
+    width: 350px;
+    height: 500px;
   }
 }
