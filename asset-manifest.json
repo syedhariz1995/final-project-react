@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/final-project-react/static/css/main.8a4131c4.css",
+    "main.js": "/final-project-react/static/js/main.7d63fb43.js",
+    "static/js/787.3c62fbe8.chunk.js": "/final-project-react/static/js/787.3c62fbe8.chunk.js",
+    "static/media/movie_logo.png": "/final-project-react/static/media/movie_logo.a13b773479588182713b.png",
+    "static/media/undraw_home_cinema.svg": "/final-project-react/static/media/undraw_home_cinema.ac6664c723ea9d490620df81a883cc0c.svg",
+    "index.html": "/final-project-react/index.html",
+    "main.8a4131c4.css.map": "/final-project-react/static/css/main.8a4131c4.css.map",
+    "main.7d63fb43.js.map": "/final-project-react/static/js/main.7d63fb43.js.map",
+    "787.3c62fbe8.chunk.js.map": "/final-project-react/static/js/787.3c62fbe8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a4131c4.css",
+    "static/js/main.7d63fb43.js"
+  ]
+}
